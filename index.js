@@ -98,6 +98,30 @@ app.get("/past-winners", (req, res) => {
 app.get("/reach", (req, res) => {
   res.render("pages/reach.ejs");
 });
+
+// Textbook routes
+app.get("/textbook", (req, res) => {
+  const chapters = require("./views/pages/textbook/chapters.json");
+  res.render("pages/textbook.ejs", { chapters });
+});
+
+// Textbook chapter viewer route
+app.get("/textbook/:chapter", (req, res) => {
+  const chapterId = req.params.chapter;
+  const chapters = require("./views/pages/textbook/chapters.json");
+  
+  // Find the chapter - fix: chapters.chapters.find instead of chapters.find
+  const chapter = chapters.chapters.find(ch => ch.id === chapterId);
+  
+  if (chapter && chapter.status !== 'coming-soon') {
+    res.render("pages/textbook-viewer.ejs", { 
+      chapter: chapter,
+      chapters: chapters.chapters 
+    });
+  } else {
+    res.status(404).render("pages/404.ejs");
+  }
+});
 // // any actual test
 // app.get("/test/:recordId", async (req, res) => {
 //   const recordId = req.params.recordId;
@@ -328,6 +352,8 @@ app.get("**", async (req, res) => {
   let redirected = false;
   console.log(path);
 
+  // Commented out since eventsTable is not defined
+  /*
   let possibleRedirects = [];
 
   let events = await eventsTable.read();
@@ -358,6 +384,7 @@ app.get("**", async (req, res) => {
       redirected = true;
     }
   });
+  */
 
   if (!redirected) {
     res.status(404).render("pages/404.ejs");

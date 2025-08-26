@@ -1,0 +1,149 @@
+{
+  "title": "JHMC Mathematics Textbook",
+  "description": "Junior High Math Competition (JHMC) Mathematics Textbook",
+  "chapters": [
+    {
+      "id": "algebra",
+      "title": "Algebra",
+      "description": "Fundamental concepts in algebra from linear equations to complex numbers",
+      "sections": [
+        {
+          "id": "intro",
+          "title": "Introduction to Algebra",
+          "file": "algebra.html#intro"
+        },
+        {
+          "id": "linear-equations",
+          "title": "Linear Equations",
+          "file": "algebra.html#linear-equations",
+          "subsections": [
+            "One Variable Linear Equations",
+            "Graphing & Two Variable Equations"
+          ]
+        },
+        {
+          "id": "multivariable-systems",
+          "title": "Multivariable Systems",
+          "file": "algebra.html#multivariable-systems",
+          "subsections": [
+            "Introduction to Systems",
+            "Substitution",
+            "Elimination",
+            "Working with More Variables"
+          ]
+        },
+        {
+          "id": "inequalities",
+          "title": "Inequalities",
+          "file": "algebra.html#inequalities",
+          "subsections": [
+            "Linear Inequalities",
+            "Graphing Inequalities",
+            "Optimization"
+          ]
+        },
+        {
+          "id": "quadratics",
+          "title": "Quadratics",
+          "file": "algebra.html#quadratics",
+          "subsections": [
+            "What's a Quadratic?",
+            "Completing the Square",
+            "The Quadratic Formula",
+            "Sum and Product of Roots",
+            "Graphing Applications"
+          ]
+        },
+        {
+          "id": "factorization",
+          "title": "Factorization Methods",
+          "file": "algebra.html#factorization",
+          "subsections": [
+            "Difference of Squares",
+            "Difference/Sum of Cubes",
+            "Binomial Theorem",
+            "Simon's Favorite Factoring Trick"
+          ]
+        },
+        {
+          "id": "complex-numbers",
+          "title": "Complex Numbers",
+          "file": "algebra.html#complex-numbers",
+          "subsections": [
+            "Imaginary Numbers",
+            "Complex Number Operations"
+          ]
+        },
+        {
+          "id": "exponents-logarithms",
+          "title": "Exponents and Logarithms",
+          "file": "algebra.html#exponents-logarithms"
+        },
+        {
+          "id": "functions",
+          "title": "Functions",
+          "file": "algebra.html#functions",
+          "subsections": [
+            "What's a Function?",
+            "Inverse Functions",
+            "Graphing Functions"
+          ]
+        },
+        {
+          "id": "special-functions",
+          "title": "Special Functions",
+          "file": "algebra.html#special-functions",
+          "subsections": [
+            "Radicals",
+            "Piecewise Functions",
+            "Absolute Value",
+            "Floor, Ceiling, and Sawtooth",
+            "Rational Functions"
+          ]
+        },
+        {
+          "id": "polynomials",
+          "title": "Polynomials",
+          "file": "algebra.html#polynomials",
+          "subsections": [
+            "Properties of Polynomials",
+            "Polynomial Operations",
+            "Polynomial Long Division",
+            "Vieta's Formula"
+          ]
+        },
+        {
+          "id": "sequences-series",
+          "title": "Sequences & Series",
+          "file": "algebra.html#sequences-series",
+          "subsections": [
+            "Arithmetic Sequences/Series",
+            "Geometric Sequences/Series",
+            "Telescoping"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geometry",
+      "title": "Geometry",
+      "description": "Coming Soon - Geometric concepts and problem-solving techniques",
+      "sections": [],
+      "status": "coming-soon"
+    },
+    {
+      "id": "number-theory",
+      "title": "Number Theory",
+      "description": "Coming Soon - Prime numbers, divisibility, and modular arithmetic",
+      "sections": [],
+      "status": "coming-soon"
+    },
+    {
+      "id": "combinatorics",
+      "title": "Combinatorics & Probability",
+      "description": "Coming Soon - Counting principles and probability theory",
+      "sections": [],
+      "status": "coming-soon"
+    }
+  ]
+}
