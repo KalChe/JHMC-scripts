@@ -117,7 +117,7 @@ app.get("/textbook/:chapterId", (req, res) => {
   // Ensure the template has the full chapters list for sidebar/navigation
   const chapters = textbook.getAllChapters();
   // The generated HTML file for a chapter is stored as <chapterId>.html in public/textbook/html
-  const chapterFile = `${chapter.id}.html`;
+  const chapterFile = `${chapter.id}.ejs`;
   
   console.log(`Rendering with chapter: ${chapter.id}, file: ${chapterFile}`);
   

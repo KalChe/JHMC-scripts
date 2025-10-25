@@ -488,7 +488,7 @@
     // Load the generated chapter HTML (written to public/textbook/html/<chapterFile>)
     (function loadChapterHtml() {
       const chapterId = '<%= chapter.id %>';
-      const url = '/textbook/html/' + chapterId + '.html';
+      const url = '/textbook/html/' + chapterId + '.ejs';
       console.log('Loading chapter from:', url);
       
       fetch(url)
