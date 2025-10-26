@@ -9,6 +9,7 @@ const http = require("http").createServer(app);
 const fs = require("fs");
 
 const websocket = require("./socket.js");
+const textbook = require("./textbook-parser.js");
 // const { apiKey, baseID, sampleTestId } = require("./secrets.js");
 
 // baseID, apiKey, and tableName can alternatively be set by environment variables
@@ -89,6 +90,48 @@ app.get("/about", (req, res) => {
   res.render("pages/about.ejs");
 });
 
+app.get("/past-winners", (req, res) => {
+  res.render("pages/past-winners.ejs");
+});
+
+app.get("/reach", (req, res) => {
+  res.render("pages/reach.ejs");
+});
+
+// Textbook routes
+app.get("/textbook", (req, res) => {
+  const chapters = textbook.getAllChapters();
+  res.render("pages/textbook.ejs", { chapters: chapters });
+});
+
+app.get("/textbook/:chapterId", (req, res) => {
+  console.log(`Loading chapter: ${req.params.chapterId}`);
+  const chapter = textbook.loadChapter(req.params.chapterId);
+  console.log(`Chapter loaded:`, chapter ? `SUCCESS - ${chapter.title}` : 'FAILED');
+  
+  if (!chapter) {
+    console.log(`Chapter not found: ${req.params.chapterId}`);
+    return res.status(404).render("pages/404.ejs");
+  }
+  
+  // Ensure the template has the full chapters list for sidebar/navigation
+  const chapters = textbook.getAllChapters();
+  // The generated HTML file for a chapter is stored as <chapterId>.html in public/textbook/html
+  const chapterFile = `${chapter.id}.ejs`;
+  
+  console.log(`Rendering with chapter: ${chapter.id}, file: ${chapterFile}`);
+  
+  try {
+    res.render("pages/textbook-viewer.ejs", { chapter, chapters, chapterFile });
+  } catch (error) {
+    console.error('Template rendering error:', error);
+    res.status(500).send('Template rendering failed: ' + error.message);
+  }
+});
+
+
+// Textbook routes
+// (Route handlers for /textbook and /textbook/:chapter are defined above and use the textbook parser module.)
 // // any actual test
 // app.get("/test/:recordId", async (req, res) => {
 //   const recordId = req.params.recordId;
@@ -319,6 +362,8 @@ app.get("**", async (req, res) => {
   let redirected = false;
   console.log(path);
 
+  // Commented out since eventsTable is not defined
+  /*
   let possibleRedirects = [];
 
   let events = await eventsTable.read();
@@ -349,6 +394,7 @@ app.get("**", async (req, res) => {
       redirected = true;
     }
   });
+  */
 
   if (!redirected) {
     res.status(404).render("pages/404.ejs");
