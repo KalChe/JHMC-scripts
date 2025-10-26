@@ -183,8 +183,8 @@
 <div class="solution-section">
 <h4>Solutions</h4>
 
-<p>$60 = 2^2 \cdot 3^1 \cdot 5^1$, so we have $3 \cdot 2 \cdot 2 = 12$ divisors.</p>
-<p>$16 = 2^4$, so we have $5$ divisors.</p>
+<p>$60 = 2^2 \cdot 3^1 \cdot 5^1$, so we have $3 \cdot 2 \cdot 2 = \boxed{12}$ divisors.</p>
+<p>$16 = 2^4$, so we have $\boxed{5}$ divisors.</p>
 <p>We know that $60$ already has $12$ divisors, so lets see if we are able to find a number with more divisors. $13$ divisors is unrealistic because we would need a prime to the power of $12$. $14$ divisors again doesn’t work because we need a prime to the power of $6$ and another prime to the power of $1$. $15$ divisors doesn’t work either because the lowest possible number is $2^4 \cdot 3^2 = 144$. If we continue along this path, we may see that no other numbers work because the products keep becoming larger. Thus, our answer is $60$.</p>
 <p>We know there are $12$ divisors of $60$, so our answer is $60^6$.</p>
 <p>There are $5$ divisors here, so our answer is $16^{2.5}$. Note here that the number of divisors we have is odd. This happens when there exists a perfect square. Dividing this number by $2$ will result in a decimal ending in 0.5, but this is fine because our original number is a perfect square anyways.</p>
@@ -311,7 +311,7 @@
 <h4>Solutions</h4>
 
 <ol>
-<li>To convert $65_{6}$ to base $9$, we first convert it to base $10$. We have $6^1 \cdot 6 + 5 \cdot 1 = 36 + 5 = 41$. Now, we convert $41_{10}$ to base $9$. Dividing $41$ by $9$, we get $41 \div 9 = 4$ remainder $5$. Thus, $41_{10} = 45_{9}$.</li>
+<li>To convert $65_{6}$ to base $9$, we first convert it to base $10$. We have $6^1 \cdot 6 + 5 \cdot 1 = 36 + 5 = 41$. Now, we convert $41_{10}$ to base $9$. Dividing $41$ by $9$, we get $41 \div 9 = 4$ remainder $5$. Thus, $\boxed{41_{10} = 45_{9}}$.</li>
 </ol>
 </div>
 
@@ -330,8 +330,8 @@
 <h4>Solutions</h4>
 
 <ol>
-<li>To convert $0.25_{10}$ to base $2$, we can multiply the fractional part by $2$ repeatedly. We have $0.25 \cdot 2 = 0.5$, so the first digit is $0$. Next, we take $0.5 \cdot 2 = 1.0$, so the second digit is $1$. Therefore, $0.25_{10} = 0.01_{2}$.</li>
-<li>To convert $0.36_{9}$ to base $5$, we can multiply the fractional part by $5$ repeatedly. We have $0.36 \cdot 5 = 1.8$, so the first digit is $1$. Next, we take $0.8 \cdot 5 = 4.0$, so the second digit is $4$. Therefore, $0.36_{9} = 0.14_{5}$.</li>
+<li>To convert $0.25_{10}$ to base $2$, we can multiply the fractional part by $2$ repeatedly. We have $0.25 \cdot 2 = 0.5$, so the first digit is $0$. Next, we take $0.5 \cdot 2 = 1.0$, so the second digit is $1$. Therefore, $\boxed{0.25_{10} = 0.01_{2}}$.</li>
+<li>To convert $0.36_{9}$ to base $5$, we can multiply the fractional part by $5$ repeatedly. We have $0.36 \cdot 5 = 1.8$, so the first digit is $1$. Next, we take $0.8 \cdot 5 = 4.0$, so the second digit is $4$. Therefore, $\boxed{0.36_{9} = 0.14_{5}}$.</li>
 </ol>
 </div>
 
@@ -440,7 +440,7 @@
 
 <ol>
 <li>We take mod 10 and simplify. This becomes $k=2^8+8^2 \pmod{10}$. From our digit cycle of 2, we can find that $k = 6+4=0 \pmod{10}$. Thus, $k^2 = 0 \pmod{10}$. Since $k=0 \pmod{4}$ (why?), $2^k = 2^4 = 6 \pmod{10}$. If we add these two, the units digit is $\boxed{6}$.</li>
-<li>(Exercise for reader)</li>
+<li>$\boxed{\text{(Exercise for reader)}}$</li>
 <li>Check the digit cycle of 7, which has length 4 (like the cycle of 2). Conduct the same approach as we did before, and find that it will result in $7^1 = \boxed{7}$.</li>
 </ol>
 </div>
@@ -499,8 +499,8 @@
 <h4>Solutions</h4>
 
 <ol>
-<li>All primes p satisfy this since $(p-2)! \equiv (p-1)(p-2)(p-3)! \equiv (-1)(-2)(p-3)! \equiv 2(p-3)! \equiv -1 \pmod{p}$.</li>
-<li>Recall $(p-1)! \equiv -1\pmod{p}$, then we can see trivially that $(p-1)! \equiv (p-1)(p-2)(p-3)!$ So after applying the modulo $p$ we yield this result: $(p-1)! \equiv (-1)(-2)(p-3)! \pmod{p}$, so with using wilson's we get $2(p-3)! \equiv -1 \pmod{p}$, sub this back into the initial condition, yielding $2 \cdot 2 \equiv -1 \pmod{p} \rightarrow 4 \equiv -1 \pmod{p}$, thus trivially notice $p=5$ is the only prime that works.</li>
+<li>$\boxed{\text{All primes p satisfy this}}$ since $(p-2)! \equiv (p-1)(p-2)(p-3)! \equiv (-1)(-2)(p-3)! \equiv 2(p-3)! \equiv -1 \pmod{p}$.</li>
+<li>Recall $(p-1)! \equiv -1\pmod{p}$, then we can see trivially that $(p-1)! \equiv (p-1)(p-2)(p-3)!$ So after applying the modulo $p$ we yield this result: $(p-1)! \equiv (-1)(-2)(p-3)! \pmod{p}$, so with using wilson's we get $2(p-3)! \equiv -1 \pmod{p}$, sub this back into the initial condition, yielding $2 \cdot 2 \equiv -1 \pmod{p} \rightarrow 4 \equiv -1 \pmod{p}$, thus trivially notice $\boxed{p=5}$ is the only prime that works.</li>
 </ol>
 </div>
 
@@ -598,7 +598,7 @@ $
 <h4>Solutions</h4>
 
 <ol>
-<li> Proceed down each answer choice and apply LTE Lemma to each. For (A) $v_p(2^{606}-1) = v_p(2-1) +v_p(606)$. Clearly, we can see that when $p=3$, $v_p = 1$ which implies that (A) is divisible by $3$. For (B). We firstly note that we cannot apply the addition form of the LTE Lemma in this state, since 606 is not odd. Conveniently, we can write it like this. $v_p(2^{606}+1) = v_p(4^{303}+1) = v_p(4+1) + v_p(303)$. By squaring the $2$, we eliminate the even number and can see easily that (B) is divisible by 5. For (D), we can directly apply the lemma. $v_p(2^{607}+1) = v_p(2+1) + v_p(607)$ which means (D) is divisible by 3. Finally, (E). $v_p(2^{607}+3^{607}) = v_p(2+3) +v_p(607)$ which clearly denotes divisibility by 5. By elimination, we find the answer is C. For reference, we can also show this by using the lemma on C. $v_p(2^{607}-1) = v_p(2-1) +v_p(607)$ which since 1 and 607 are not divisible by a prime number, no prime divides C.</li>
+<li> Proceed down each answer choice and apply LTE Lemma to each. For (A) $v_p(2^{606}-1) = v_p(2-1) +v_p(606)$. Clearly, we can see that when $p=3$, $v_p = 1$ which implies that (A) is divisible by $3$. For (B). We firstly note that we cannot apply the addition form of the LTE Lemma in this state, since 606 is not odd. Conveniently, we can write it like this. $v_p(2^{606}+1) = v_p(4^{303}+1) = v_p(4+1) + v_p(303)$. By squaring the $2$, we eliminate the even number and can see easily that (B) is divisible by 5. For (D), we can directly apply the lemma. $v_p(2^{607}+1) = v_p(2+1) + v_p(607)$ which means (D) is divisible by 3. Finally, (E). $v_p(2^{607}+3^{607}) = v_p(2+3) +v_p(607)$ which clearly denotes divisibility by 5. By elimination, we find the answer is $\boxed{C}$. For reference, we can also show this by using the lemma on C. $v_p(2^{607}-1) = v_p(2-1) +v_p(607)$ which since 1 and 607 are not divisible by a prime number, no prime divides C.</li>
 </ol>
 </div>
 
