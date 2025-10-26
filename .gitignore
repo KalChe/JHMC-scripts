@@ -149,3 +149,10 @@ output_dat_Glen Crest.json
 output_dat_Hanci Team.json
 output_dat_Mary Ellen Henderson Middle School.json
 *.js
+
+# Allow specific JS files to be tracked
+!schedule.js
+!socket.js
+!index.js
+!tests.js
+!textbook-parser.js
