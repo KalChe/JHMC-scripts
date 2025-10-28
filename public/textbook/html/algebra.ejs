@@ -128,25 +128,47 @@ y &= 2x + 5
 <p>In fact, this inequality holds for further variables, such as including 3 variables or infinitely many.</p>
 
 <h3 id="am-gm-hm-qm">AM-GM-HM-QM</h3>
-<p>We know what a linear equation is, and similarly what exponents (like squaring does). We might be then provoked to wonder what happens when an equation has a higher degree. This is a polynomial, and especially when the highest degree is of power two, a quadratic equation. Quadratic equations most commonly fit the form $y=ax^2+bx+c$ (which may be seen as standard form), but can also be expressed in vertex form, $y=(x-h)^2+k$. Some key characteristics of quadratic equations is that they have a vertex as well as up to 2 zeros (or roots). Furthermore, they are symmetrical about the vertical line passing through the vertex. They often appear as a U shape.</p>
-<p>Completing the square refers to a situation in which you have $x^2+2ax$. This appears to be a perfect square that has had a constant subtracted from it. In particular, $(x+a)^2=x^2+2ax+a^2$. So we can see that $x^2+2ax=(x+a)^2-a^2$. This can be applied even in situations such as in the standard form, of $ax^2+bx+c$ (for a variety of values). In this instance, the key is to factor $a$ before completing the square. Then, divide $b$ by 2 to get the value of $a$. For example, take $x^2+3x$. To complete the square here, we take half the value of $b$, which is $3$. Then $x^2+3x=(x+3/2)^2-(3/2)^2$, or $(x+3/2)^2-9/4$.</p>
-<p>In the formula $ax^2+bx+c=0$, we wish to derive a perfect square and some excess constant remainder. Then, we can take the square root of the remainder and find solutions for $x$. In particular, we can note that for $(x+a)^2$, it results in $x^2+2ax+a^2$. Thus, we will see that upon factoring $a$ from $ax^2+bx+c$, we get $a(x^2+b/ax+c/a)$. Then, this could be factored as $a(x+b/2a)^2+\text{some remainder}$. When we expand our square, we get $ax^2+bx+b^2/4a+\text{some remainder} = x^2+bx+c$. Thus, our remainder must be $c- b^2/4a$ (or $(4ac-b^2)/4a$). Then, we know that $ax^2+bx+c=a(x+b/2a)^2+(4ac-b^2)/4a=0$. When we move the constant over and divide by $a$, we get $(x+b/2a)^2=(b^2-4ac)/4a^2$. Finally, taking the square root and moving the $b$ gets us $x = -b \pm \sqrt{b^2-4ac}/2a$.</p>
-<p>This shows us that we can get the solutions to any quadratic equation using this formula. Furthermore, it can tell us about the amount of solutions that exist. For example, we will call the term $(b^2-4ac)$ the discriminant of the equation. When this discriminant is positive, the solutions are 2 (since this value can be added or subtracted from $-b$). Then, if it is $0$ there is only one solution ($b/2a$). If it is negative, the square root cannot be taken and thus there is no solution.</p>
-<h4>Sum and Product of Roots</h4>
-<p>Factoring quadratics can also be computed through some useful tricks. In the most simple cases with quadratics with leading coefficient $1$, such as $x^2+7x+12$, any factoring will have $(x-a)(x-b)$ where $a$ and $b$ are the zeroes of the quadratic. Then, if we expanded this, we would get $x^2-(a+b)x+ab$. This should show us that $ab=12$, and $a+b=-7$. What this means is that the roots of the equation must multiply to the constant and add to the inverse of the second coefficient. See Vieta's formulas below for more information.</p>
+<p>The proof to this larger inequality is slightly outside the scope of this textbook, but it could be helpful in more advanced competition math. We can define this inequality as such: </p>
+<p>We know what an arithmetic mean and geometric mean is (from above), but a \textit{harmonic mean} between numbers $x_1, x_2, x_3, \dots x_n$ is defined as $HM=\frac{n}{\frac{1}{x_1} + \frac{1}{x_2} \dots + \frac{1}{x_n}}$ and the quadratic mean is defined as $QM = \sqrt{\frac{x_1^2 + x_2^2 + x_3^2 \dots + x_n^2}{n}}$ for these same numbers. </p>
+<p>Our AM-GM-HM-QM inequality then says that $QM \leq AM \leq GM \leq HM$, or that:</p>
+<p>$$ \sqrt{\frac{x_1^2 + x_2^2 + x_3^2 \dots + x_n^2}{n}} \leq \frac{x_1 + x_2 + x_3 \dots x_n}{n} \leq \sqrt[n]{x_1*x_2*x_3 \dots * x_n} \leq \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} \dots + \frac{1}{x_n}}$$.</p>
 
-<h2 id="graphing-applications">Graphing Applications</h2>
-<p>In order to graph quadratic equations, we should be mindful of the key features. Primarily, we know that the vertex of a quadratic is at (h,k) when the equation is y=(x-h)^2+k. From there, the quadratic equation must be symmetric about x=h, and has to pass through the zeros. Once the vertex has been fixed, set x to be values such as h+1, h+2, and h+3, plotting the y values. Connecting the curve and then doing the same on the other side of the equation yields the parabola.</p>
-<p>Practically speaking, the vertex gives the key applications of a parabola. The vertex is either the maximum or minimum value of the parabola, depending on whether there is a negative before (x-h)^2.</p>
-<p>The difference of two squares, $x^2-y^2$ can be represented by (x-y)(x+y). If we expand the factored form, we get x^2-xy+xy-y^2 = x^2-y^2.</p>
+<h2 id="whats-a-quadratic">What’s a Quadratic?</h2>
+<p>We know what a linear equation is, and similarly what exponents (like squaring does). We might be then provoked to wonder what happens when an equation has a higher degree. This is a polynomial, and especially when the highest degree is of power two, a quadratic equation. Quadratic equations most commonly fit the form $y=ax^2+bx+c$ (which may be seen as standard form), but can also be expressed in vertex form, $y=(x-h)^2+k$. Some key characteristics of quadratic equations is that they have a vertex as well as up to 2 zeros (or roots). Furthermore, they are symmetrical about the vertical line passing through the vertex. They often appear as a U shape.</p>
+
+<h3 id="completing-the-square">Completing the Square</h2>
+<p>Completing the square refers to a situation in which you have $x^2+2a$x. This appears to be a perfect square that has had a constant subtracted from it. In particular, $(x+a)^2=x^2+2ax+a^2$. So we can see that $x^2+2ax=(x+a)^2-a^2$. This can be applied even in situations such as in the standard form, of $ax^2+bx+c$ (for a variety of values). In this instance, the key is to factor a before completing the square. Then, divide b by 2 to get the value of a. For example, take $x^2+3x$. To complete the square here, we take half the value of b, which is 3. Then $x^2+3x=(x+\frac{3}{2})^2-(\frac{3}{2})^2$, or $(x+\frac{3}{2})^2-\frac{9}{4}$.</p>
+
+<h3 id="quadratic-formula">The Quadratic Formula</h3>
+<p>In the formula $ax^2+bx+c=0$, we wish to derive a perfect square and some excess constant remainder. Then, we can take the square root of the remainder and find solutions for x. In particular, we can note that for $(x+a)^2$, it results in $x^2+2ax+a^2$. Thus, we will see that upon factoring $a$ from $ax^2+bx+c$, we get $a(x^2+\frac{b}{a}x+\frac{c}{a})$. Then, this could be factored as $a\left(x+\frac{b}{2a}\right)^2$ plus some remainder. When we expand our square, we get $ax^2+bx+\frac{b^2}{4a}$ plus some remainder will equal $ax^2+bx+c$. Thus, our remainder must be $c-\frac{b^2}{4a}$ (or $\frac{4ac-b^2}{4a}$). Then, we know that $ax^2+bx+c = a\left(x+\frac{b}{2a}\right)^2 + \frac{4ac-b^2}{4a} = 0$. When we move the constant over and divide by $a$, we get $\left(x+\frac{b}{2a}\right)^2 = \frac{b^2-4ac}{4a^2}$. Finally, taking the square root and moving the $b$ gets us $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$.</p>
+
+<p>This shows us that we can get the solutions to any quadratic equation using this formula. Furthermore, it can tell us about the number of solutions that exist. For example, we will call the term $b^2-4ac$ the discriminant of the equation. When this discriminant is positive, the solutions are 2 (since this value can be added or subtracted from $-b$). Then, if it is 0, there is only one solution $\left(\frac{-b}{2a}\right)$. If it is negative, the square root cannot be taken and thus there is no solution.</p>
+
+<h3 id="sum-product-roots">Sum and Product of Roots</h2>
+<p>Factoring quadratics can also be computed through some useful tricks. In the most simple cases with quadratics with leading coefficient 1, such as $x^2+7x+12$, any factoring will have $(x-a)(x-b)$ where a and b are the zeroes of the quadratic. Then, if we expanded this, we would get $x^2-(a+b)x+ab$. This should show us that $ab=12$, and $a+b=-7$. What this means is that the roots of the equation must multiply to the constant and add to the inverse of the second coefficient. See Vieta’s formulas below for more information like this.</p>
+
+<h3 id="graphing-applications">Graphing/Applications</h2>
+<p>In order to graph quadratic equations, we should be mindful of the key features. Primarily, we know that the vertex of a quadratic is at (h,k) when the equation is $y=(x-h)^2+k$. From there, the quadratic equation must be symmetric about x=h, and has to pass through the zeros. Once the vertex has been fixed, set x to be values such as $h+1, h+2,$ and $h+3,$ plotting the y values. Connecting the curve and then doing the same on the other side of the equation yields the parabola.</p>
+<p>Practically speaking, the vertex gives the key applications of a parabola. The vertex is either the maximum or minimum value of the parabola, depending on whether there is a negative before $(x-h)^2.$</p>
+
+<h2 id="factorization-methods">Factorization Methods</h2>
+
+<h3 id="difference-squares">Difference of Squares</h3>
+<p>The difference of two squares, $x^2-y^2$ can be represented by $(x-y)(x+y)$. If we expand the factored form, we get $x^2-xy+xy-y^2 = x^2-y^2.$</p>
 <p>This can be applied to variables and numbers.</p>
+
+<h3 id="difference-sum-cubes">Difference/Sum of Cubes</h3>
 <p>Similarly, the difference/sum of cubes can be factored thusly:</p>
 <p>$x^3+y^3=(x+y)(x^2-xy+y^2)$</p>
 <p>$x^3-y^3=(x-y)(x^2+xy+y^2)$</p>
 <p>$x^5+y^5 = (x+y)(x^4-x^3y+x^2y^2-xy^3+y^4)$</p>
-<h2 id="squares-binomial">Squares/Powers of Binomials</h2>
-<p>We observe in particular the squares of $(a+b)$ and $(a-b)$. These squares are commonly shown as $a^2+2ab+b^2$ and $a^2-2ab+b^2$ (by expanding). If we further extend to cubed powers, we can obtain $a^3+b^3+3ab(a+b)$ and $a^3-b^3-3ab(a-b)$.</p>
-<p>It may become tedious to expand higher power polynomials. Luckily, we have a shortcut. The reader may be familiar with Pascal's triangle, which gives the coefficients of the $n$th power of $(a+b)^n$. Similarly, the binomial theorem tells us that the coefficient of the term $x^{n-k}y^k$ is simply ${n \choose k}$. In total, the coefficients will be ${n \choose 0}, {n \choose 1}, {n \choose 2}, \dots, {n \choose n-2}, {n \choose n-1}, {n \choose n}$.</p>
+<p>In general, $x^n - y^n = (x - y)(x^{n-1} + x^{n-2} * y^1 + x^{n-3} * y^2 \dots + y^{n-1})$.</p>
+
+<h3 id="squares-powers-binomials">Squares/Powers of Binomials</h3>
+<p>We observe in particular the squares of $(a+b)$ and $(a-b)$. These squares are commonly shown as $a^2+2ab+b^2$ and $a^2-2ab+b^2$ (by expanding) If we further extend to cubed powers, we can obtain $a^3+b^3+3ab(a+b)$ and $a^3-b^3-3ab(a-b).$</p>
+
+<h3 id="binomial-theorem">Binomial Theorem</h3>
+<p>It may become tedious to expand higher power polynomials. Luckily, we have a shortcut. The reader may be familiar with Pascal’s triangle, which is the coefficients of the nth power of $(a+b)^n$. Similarly, the binomial theorem tells us that the coefficient of the term $x^{n-k}y^k$ is simply $binom{n}{k}$. In total, the coefficients will be $\binom{n}{0}, \binom{n}{1},\binom{n}{2} \dots\binom{n}{n-2},\binom{n}{n-1},\binom{n}{n}.$</p>
 
 <h3 id="sfft">Simon's Favorite Factoring Trick (SFFT)</h3>
 <p>Simon's Favorite Factoring Trick (SFFT) is a factoring idea that was popularized on AoPS forums. The basis of the trick is to notice that $(x+1)(y+1) = xy+x+y+1$, which allows the factorization of expressions like $xy+x+y$ by adding constants.</p>
