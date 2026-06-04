@@ -603,3 +603,76 @@ header.masthead .bg-plus-1 {
 .col {
   width: fit-content;
 }
+
+.organizer-columns {
+  margin-top: 1.5rem;
+}
+
+.organizer-column {
+  padding: 2rem 1.5rem;
+}
+
+.organizer-column + .organizer-column {
+  border-left: 1px solid #4b5f81;
+}
+
+.organizer-column-title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+  color: #102a54;
+}
+
+.organizer {
+  margin-bottom: 1.5rem;
+}
+
+.organizer .card {
+  height: 620px !important;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.organizer .card-img-top {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.organizer .card-body {
+  padding: 0;
+}
+
+.organizer h5 {
+  margin-bottom: 0.4rem;
+}
+
+.organizer h6 {
+  margin-bottom: 1rem;
+}
+
+.organizer .blurb {
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 991.98px) {
+  .organizer-column + .organizer-column {
+    border-left: none;
+    border-top: 1px solid #4b5f81;
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  .organizer .card {
+    height: auto !important;
+    min-height: 580px;
+  }
+}
