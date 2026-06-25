@@ -697,7 +697,10 @@
         });
         
         // Hide original solution sections
-        section.style.display = 'none';
+        if (section.querySelector('ol li')) {
+          section.style.display = 'none';
+        }
+        
       });
       
       console.log('Processed exercises:', Object.keys(exercises).length);
