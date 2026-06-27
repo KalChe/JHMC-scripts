@@ -38,6 +38,11 @@ $\angle 6 = \angle 7 = \angle 2 = \angle 3.$
 <p>Use the parallel lines theorems to prove that the three interior angles sum to $180^\circ$.</p>
 </div>
 
+<div class="solution-section">
+<h4>Solution</h4>
+<p>The line parallel to the base creates angles congruent to the two base angles by the parallel lines theorems. These two angles and the angle at the vertex form a straight angle, so their measures sum to $180^\circ$. Therefore, the three interior angles of the triangle sum to $180^\circ$.</p>
+</div>
+
 <h3 id="exterior-angles">Exterior Angles</h3>
 
 <div class="definition">
@@ -55,7 +60,15 @@ $\angle \text{Exterior} = \angle \text{Interior}_1 + \angle \text{Interior}_2.$
 
 <div class="exercise-section">
 <h4>Exercise</h4>
-<p>In a triangle with interior angles $50^\circ$ and $60^\circ$, find the measure of the exterior angle adjacent to the remaining angle.</p>
+<ol>
+<li>In a triangle with interior angles $50^\circ$ and $60^\circ$, find the measure of the exterior angle adjacent to the remaining angle.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>The third interior angle is $180^\circ-50^\circ-60^\circ=70^\circ$. The exterior angle adjacent to this angle is supplementary to it, so its measure is $\boxed{110^\circ}$.</li>
+</ol>
 </div>
 
 <h3 id="intersecting-lines">Intersecting Lines</h3>
@@ -76,8 +89,10 @@ $\angle \text{Exterior} = \angle \text{Interior}_1 + \angle \text{Interior}_2.$
 <ul>
     <li><strong>SSS (Side–Side–Side):</strong> If all three side lengths of one triangle are congruent to another triangle, then the triangles are congruent.</li>
     <li><strong>SAS (Side–Angle–Side):</strong> If two sides and the included angle of one triangle are congruent to two sides and the included angle of another triangle, then the triangles are congruent.</li>
-    <li><strong>ASA / AAS:</strong> If a side and two angles are congruent, the triangles are congruent. <em>Note:</em> The ambiguous case occurs if the known angle is not between the two sides.</li>
-</ul>
+    <li><strong>ASA / AAS:</strong> If two angles and a corresponding side of one triangle are congruent to two angles and the corresponding side of another triangle, then the triangles are congruent.</li>
+    <li><strong>SSA (Side–Side–Angle):</strong> SSA does not always prove triangle congruence. This is called the ambiguous case because the given information may form zero, one, or two possible triangles.</li>
+
+  </ul>
 </div>
 
 <h3 id="similarity">Similarity</h3>
@@ -105,9 +120,9 @@ $a^2 + b^2 = c^2.$
 </div>
 
 <p><strong>30–60–90 Triangle:</strong> In a right triangle with angles $30^\circ, 60^\circ, 90^\circ$, the sides have fixed ratios:</p>
-$s, \quad \tfrac{s\sqrt{3}}{2}, \quad 2s.$
+$s, \quad s\sqrt{3}, \quad 2s.$
 
-<div class="text-center">
+<div clas11    s="text-center">
   <img src="/textbook/html/geo_figs/geo_fig4.png" alt="" class="img-fluid" style="max-width: 500px;">
 <figcaption>Figure 3: 30-60-90 Triangle.</figcaption>
 
@@ -174,6 +189,11 @@ $A = \sqrt{s(s-a)(s-b)(s-c)}.$
 <p>Use Heron's Formula to confirm that a $3\!-\!4\!-\!5$ triangle is right-angled.</p>
 <p><strong>Hint 1:</strong> Express the height $h$ in terms of $a,b,c$.</p>
 <p><strong>Hint 2:</strong> Use the Pythagorean Theorem on the two smaller triangles formed.</p>
+</div>
+
+<div class="solution-section">
+<h4>Solution</h4>
+<p>The semiperimeter is $s=\frac{3+4+5}{2}=6$. By Heron's Formula, the area is $\sqrt{6(6-3)(6-4)(6-5)}=\sqrt{36}=6$. This matches the area $\frac{1}{2}\cdot 3\cdot 4=6$, so the $3\!-\!4\!-\!5$ triangle is right-angled.</p>
 </div>
 
 <div class="text-center">
@@ -248,6 +268,11 @@ $A = \pi r^2.$
 <p>Prove that the area of a circle is $\pi r^2$ by partitioning it into sectors and rearranging them into a rectangle of dimensions $\pi r$ by $r$.</p>
 </div>
 
+<div class="solution-section">
+<h4>Solution</h4>
+<p>When the circle is partitioned into sectors and rearranged, the shape approaches a rectangle. The height of the rectangle is $r$, and the base is half the circumference, or $\pi r$. Therefore, the area is $\pi r \cdot r = \pi r^2$.</p>
+</div>
+
 <div class="text-center">
   <img src="/textbook/html/geo_figs/geo_fig9.png" alt="" class="img-fluid" style="max-width: 500px;">
 <figcaption>Figure 7: Decomposing a circle into pizza slices to find area..</figcaption>
@@ -294,7 +319,7 @@ $y - \tfrac{y_1+y_2}{2} \;=\; -\tfrac{x_2-x_1}{y_2-y_1}\Bigl(x - \tfrac{x_1+x_2}
 <div class="theorem">
 <strong>Angle Bisector Theorem:</strong>
 <p>In $\triangle ABC$, if $BD$ is the angle bisector of $\angle ABC$, then</p>
-$\frac{AB}{AD} \;=\; \frac{BC}{CD}.$
+$\frac{AB}{BC} \;=\; \frac{AD}{CD}.$
 <p>Equivalently, $AB \cdot CD = AD \cdot BC$.</p>
 </div>
 
@@ -333,7 +358,7 @@ $\frac{AB}{AD} \;=\; \frac{BC}{CD}.$
 <p>An inscribed angle is an angle whose vertex lies on the circle and whose sides intercept an arc of the circle.</p>
 
 <div class="text-center">
-  <img src="/textbook/html/geo_figs/geo_fig10.png" alt="" class="img-fluid" style="max-width: 500px;">
+  <img src="/textbook/html/geo_figs/fig10.png" alt="" class="img-fluid" style="max-width: 500px;">
 <figcaption>Figure 11: Inscribed angles in a circle $A$ intercepting an arc of the circle.</figcaption>
 
 </div>
@@ -356,7 +381,7 @@ $m\angle A = \tfrac{1}{2} m\angle B.$
 </div>
 
 <div class="text-center">
-  <img src="/textbook/html/geo_figs/geo_fig11.png" alt="" class="img-fluid" style="max-width: 500px;">
+  <img src="/textbook/html/geo_figs/fig11.png" alt="" class="img-fluid" style="max-width: 500px;">
 <figcaption>Figure 12: A tangent touches the circle in one point, while a secant cuts across in two points.</figcaption>
 
 </div>
@@ -372,7 +397,7 @@ $PA \cdot PB = PC \cdot PD.$
 </div>
 
 <div class="text-center">
-  <img src="/textbook/html/geo_figs/geo_fig12.png" alt="" class="img-fluid" style="max-width: 500px;">
+  <img src="/textbook/html/geo_figs/fig12.png" alt="" class="img-fluid" style="max-width: 500px;">
 <figcaption>Figure 13: Two intersecting chords inside a circle.</figcaption>
 
 </div>
@@ -384,7 +409,7 @@ $PA \cdot PB = PC \cdot PD.$
 </div>
 
 <div class="text-center">
-  <img src="/textbook/html/geo_figs/geo_fig13.png" alt="" class="img-fluid" style="max-width: 500px;">
+  <img src="/textbook/html/geo_figs/fig13.png" alt="" class="img-fluid" style="max-width: 500px;">
 <figcaption>Figure 14: Two secant lines intersecting outside a circle.</figcaption>
 
 </div>
@@ -483,10 +508,18 @@ $ax + by + c = 0,$
 
 <div class="exercise-section">
 <h4>Exercise</h4>
-<p>Square $ABCD$ has a line drawn from $A$ to the midpoint of $BC$.</p>
-<p>Similarly, another line is drawn from $D$ to the midpoint of $AB$.</p>
-<p>Determine what fraction of the square's area is sectioned off in the bottom-left corner.</p>
+<ol>
+<li>Square $ABCD$ has a line drawn from $A$ to the midpoint of $BC$. Similarly, another line is drawn from $D$ to the midpoint of $AB$. Determine what fraction of the square's area is sectioned off in the bottom-left corner.</li>
+</ol>
 </div>
+
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Let the square have side length $1$ with $A=(0,0)$, $B=(1,0)$, $C=(1,1)$, and $D=(0,1)$. The midpoint of $BC$ is $(1,\frac{1}{2})$, so the line from $A$ has equation $y=\frac{1}{2}x$. The midpoint of $AB$ is $(\frac{1}{2},0)$, so the line from $D$ has equation $y=1-2x$. Solving gives the intersection point $(\frac{2}{5},\frac{1}{5})$. The bottom-left triangle has base $\frac{1}{2}$ and height $\frac{1}{5}$, so its area is $\boxed{1/20}$.</li>
+</ol>
+</div>
+
 
 <h3 id="circles-analytic">Circles</h3>
 
@@ -500,7 +533,16 @@ $(x-h)^2 + (y-k)^2 = r^2.$
 
 <div class="exercise-section">
 <h4>Exercise</h4>
-<p>Find the points of intersection between the circle centered at $(2,2)$ with radius $5$ and the line $y=3x+1$.</p>
+<ol>
+<li>Find the points of intersection between the circle centered at $(2,2)$ with radius $5$ and the line $y=3x+1$.</li>
+</ol>
+</div>
+
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Substitute $y=3x+1$ into $(x-2)^2+(y-2)^2=25$. This gives $(x-2)^2+(3x-1)^2=25$, so $10x^2-10x-20=0$. Dividing by $10$ gives $x^2-x-2=0$, so $x=2$ or $x=-1$. The corresponding $y$-values are $7$ and $-2$, so the points of intersection are $\boxed{(2,7),(-1,-2)}$.</li>
+</ol>
 </div>
 
 <h3 id="distance-point-line">Distance Between a Point and a Line</h3>
@@ -517,14 +559,16 @@ $d = \frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}.$
 
 <div class="exercise-section">
 <h4>Exercise</h4>
-<p>Find the distance between the point $(7,4)$ and the line $y=x$.</p>
-<p>Show your steps in applying the formula.</p>
+<ol>
+<li>Find the distance between the point $(7,4)$ and the line $y=x$.</li>
+</ol>
 </div>
 
 <div class="solution-section">
-<h4>Solution</h4>
-<p>Substituting $a=-1$, $b=1$, $c=0$ into the formula:</p>
-$d = \frac{|-7+4|}{\sqrt{(-1)^2+1^2}} = \frac{3}{\sqrt{2}} = \tfrac{3\sqrt{2}}{2}.$
+<h4>Solutions</h4>
+<ol>
+<li>Substituting $a=-1$, $b=1$, $c=0$ into the formula gives $d=\frac{|-7+4|}{\sqrt{(-1)^2+1^2}}=\frac{3}{\sqrt{2}}=\boxed{\frac{3\sqrt{2}}{2}}$.</li>
+</ol>
 </div>
 
 <h2 id="trigonometry">Chapter 8: Trigonometry</h2>
@@ -590,16 +634,16 @@ $c^2 = a^2 + b^2 - 2ab\cos(C).$
 
 <div class="exercise-section">
 <h4>Exercise</h4>
-<p>In $\triangle ABC$, sides $a=7$, $b=9$, and included angle $C=45^\circ$. Find the perimeter.</p>
+<ol>
+<li>In $\triangle ABC$, sides $a=7$, $b=9$, and included angle $C=45^\circ$. Find the perimeter.</li>
+</ol>
 </div>
 
 <div class="solution-section">
-<h4>Solution</h4>
-<p>Using the Law of Cosines:</p>
-$c^2 = 7^2 + 9^2 - 2(7)(9)\cos 45^\circ = 130 - 126\cdot \tfrac{\sqrt{2}}{2}.$
-<p>So</p>
-$c = \sqrt{130 - 63\sqrt{2}},$
-<p>and the perimeter is $7+9+c$.</p>
+<h4>Solutions</h4>
+<ol>
+<li>Using the Law of Cosines, $c^2=7^2+9^2-2(7)(9)\cos45^\circ=130-63\sqrt{2}$. Thus, $c=\sqrt{130-63\sqrt{2}}$, so the perimeter is $\boxed{16+\sqrt{130-63\sqrt{2}}}$.</li>
+</ol>
 </div>
 
 <h3 id="law-of-sines">Law of Sines</h3>
@@ -614,12 +658,16 @@ $\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}.$
 
 <div class="exercise-section">
 <h4>Exercise</h4>
-<p>In $\triangle ABC$, $a=3$, $\angle A=40^\circ$, and $\angle C=70^\circ$. Find $c$ (to 2 decimal places).</p>
+<ol>
+<li>In $\triangle ABC$, $a=3$, $\angle A=40^\circ$, and $\angle C=70^\circ$. Find $c$ (to 2 decimal places).</li>
+</ol>
 </div>
 
 <div class="solution-section">
-<h4>Solution</h4>
-$\frac{\sin 40^\circ}{3} = \frac{\sin 70^\circ}{c} \quad\Rightarrow\quad c = \frac{3\sin 70^\circ}{\sin 40^\circ} \approx 3.11.$
+<h4>Solutions</h4>
+<ol>
+<li>Using the Law of Sines, $\frac{\sin40^\circ}{3}=\frac{\sin70^\circ}{c}$. Solving gives $c=\frac{3\sin70^\circ}{\sin40^\circ}\approx\boxed{4.39}$.</li>
+</ol>
 </div>
 
 <h3 id="sum-difference">Sum and Difference Formulas</h3>
@@ -644,7 +692,16 @@ $\tan(A+B) = \frac{\sin(A+B)}{\cos(A+B)} = \frac{\tan A + \tan B}{1 - \tan A \ta
 
 <div class="exercise-section">
 <h4>Exercise</h4>
-<p>Evaluate $\sin 75^\circ$ using a sum formula.</p>
+<ol>
+<li>Evaluate $\sin 75^\circ$ using a sum formula.</li>
+</ol>
+</div>
+
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Using the sum formula, $\sin75^\circ=\sin(45^\circ+30^\circ)$. Thus, $\sin75^\circ=\sin45^\circ\cos30^\circ+\cos45^\circ\sin30^\circ=\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{3}}{2}+\frac{\sqrt{2}}{2}\cdot\frac{1}{2}=\boxed{\frac{\sqrt{6}+\sqrt{2}}{4}}$.</li>
+</ol>
 </div>
 
 <h2 id="cool-theorems">Chapter 9: Cool Theorems</h2>
@@ -662,6 +719,11 @@ $\frac{AF}{FB} \cdot \frac{BD}{DC} \cdot \frac{CE}{EA} = 1.$
 <p><strong>Challenge:</strong> Prove Ceva's Theorem.</p>
 <p><strong>Hint 1:</strong> Use the lengths $AF$ and $FB$ as the bases of triangles $ACF$ and $BCF$. If the height is the same, what does that tell us about the areas? Taking it a step further, consider the ratio of $[APE]$ and $[BPD]$.</p>
 <p><strong>Hint 2:</strong> Try to rewrite the original theorem in terms of the ratios of triangle areas and see if factors cancel.</p>
+</div>
+
+<div class="solution-section">
+<h4>Solution</h4>
+<p>Let $[ABP]$, $[BCP]$, and $[CAP]$ represent the areas of the three smaller triangles. Since triangles with bases on the same line share the same altitude, we have $\frac{AF}{FB}=\frac{[CAP]}{[BCP]}$, $\frac{BD}{DC}=\frac{[ABP]}{[CAP]}$, and $\frac{CE}{EA}=\frac{[BCP]}{[ABP]}$. Multiplying these ratios gives $1$, so $\frac{AF}{FB}\cdot\frac{BD}{DC}\cdot\frac{CE}{EA}=1$.</p>
 </div>
 
 <h3 id="menelaus-theorem">Menelaus' Theorem</h3>

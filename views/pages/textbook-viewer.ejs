@@ -657,17 +657,17 @@
           let extractedAnswer = null;
           
           // Pattern 1: \boxed{answer}
-          let boxedMatch = solutionHtml.match(/\\boxed\{([^}]+)\}/);
+          let boxedMatch = solutionHtml.match(/\\boxed\{((?:[^{}]|\{[^{}]*\})*)\}/);
           if (boxedMatch) {
-            extractedAnswer = boxedMatch[1].trim();
+            extractedAnswer = boxedMatch[1].trim().split('=').pop().trim();
             console.log(`✓ Extracted answer for ${exerciseId} using \\boxed: "${extractedAnswer}"`);
           }
           
           // Pattern 2: $\boxed{answer}$
           if (!extractedAnswer) {
-            boxedMatch = solutionHtml.match(/\$\\boxed\{([^}]+)\}\$/);
+            boxedMatch = solutionHtml.match(/\$\\boxed\{((?:[^{}]|\{[^{}]*\})*)\}\$/);
             if (boxedMatch) {
-              extractedAnswer = boxedMatch[1].trim();
+              extractedAnswer = boxedMatch[1].trim().split('=').pop().trim();
               console.log(`✓ Extracted answer for ${exerciseId} using $\\boxed: "${extractedAnswer}"`);
             }
           }
@@ -697,7 +697,10 @@
         });
         
         // Hide original solution sections
-        section.style.display = 'none';
+        if (section.querySelector('ol li')) {
+          section.style.display = 'none';
+        }
+        
       });
       
       console.log('Processed exercises:', Object.keys(exercises).length);

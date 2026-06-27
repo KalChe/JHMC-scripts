@@ -55,7 +55,7 @@
 <ol>
 <li>$\boxed{\text{Yes}}$</li>
 <li>$\boxed{\text{No}}$</li>
-<li>$\boxed{\text{Yes}}$</li>
+<li>$\boxed{\text{No}}$</li>
 </ol>
 </div>
 
@@ -140,7 +140,7 @@
 
 <h2>Prime factorization</h2>
 
-<p>All numbers greater than $1$ are either a prime number or a product of prime numbers. The resulting product of primes is known as the number’s prime factorization. This statement is half of the Fundamental Theorem of Algebra (the other half is that each number has a unique prime factorization). To see why this is, let’s take a look at a composite number $n$. Let’s use strong induction and assume that all numbers greater than $1$ and less than $n$ are either prime or a product of primes. Because $n$ is composite, it may be written as a product of $2$ numbers $a\cdot b$ such that $a$ and $b$ are between $1$ and $n$ not inclusive. Because $a$ and $b$ are between $1$ and $n$, they are either prime or the product of primes. Thus, the product of $a$ and $b$ must also be a product of primes. Thus, composite number $n$ must be a product of primes. We have thus shown that any composite $n$ may be expressed as the product of primes.</p>
+<p>All numbers greater than $1$ are either a prime number or a product of prime numbers. The resulting product of primes is known as the number’s prime factorization. This statement is half of the Fundamental Theorem of Arithmetic (the other half is that each number has a unique prime factorization). To see why this is, let’s take a look at a composite number $n$. Let’s use strong induction and assume that all numbers greater than $1$ and less than $n$ are either prime or a product of primes. Because $n$ is composite, it may be written as a product of $2$ numbers $a\cdot b$ such that $a$ and $b$ are between $1$ and $n$ not inclusive. Because $a$ and $b$ are between $1$ and $n$, they are either prime or the product of primes. Thus, the product of $a$ and $b$ must also be a product of primes. Thus, composite number $n$ must be a product of primes. We have thus shown that any composite $n$ may be expressed as the product of primes.</p>
 <p>Let’s try to find the prime factorization of $60$. To do so, let’s try finding some divisors. We know that $60 = 2\cdot 30$, and $2$ is prime, so let’s just leave that aside and look at $30$. $30 = 2\cdot 15$, and again, let’s set $2$ since it’s prime and look at $15$. $15 = 3\cdot 5$. Both of these numbers are prime, so we’re now done. If we look at the numbers we’ve set aside, we have two $2$s, one $3$, and one $5$. Thus, $60$ may be rewritten as $\boxed{2^2\cdot 3 \cdot 5}$.</p>
 
 </div>
@@ -269,7 +269,7 @@
 
 <p>1. $\sqrt{x}$ is irrational for all $x$ unless $x$ is a perfect square.</p>
 <p>2. The sum of an irrational number and a rational number is irrational.</p>
-<p>3. Multiplying any irrational number with a rational number results in an irrational number.</p>
+<p>3. Multiplying any irrational number with a nonzero rational number results in an irrational number.</p>
 
 <div class="exercise-section">
 <h4>Exercises</h4>
@@ -289,12 +289,12 @@
 <h2>Base arithmetic</h2>
 
 <h3>Addition/Subtraction</h3>
-<p>We can set up addition in different number bases the same as we do in base 10. Instead of carrying the $1$ after reaching $10$, we carry the remainder after exceeding the number of the base. For example, if we want to calculate $155_{6} + 34_{6}$, we first add $5+4$, carry the $1$, and get $3$. Then, $1+5+3 = 8$, and carrying the one, we get $2$. Then, $1+1 = 2$. Therefore, $155_{6} + 34_{6} = 223_{6}$.</p>
+<p>We can set up addition in different number bases the same as we do in base 10. Instead of carrying the $1$ after reaching $10$, we carry the remainder after exceeding the number of the base. For example, if we want to calculate $155_{6} + 34_{6}$, we first add $5+4$, carry the $1$, and get $3$. Then, $1+5+3 = 9$, and carrying the one, we get $3$. Then, $1+1 = 2$. Therefore, $155_{6} + 34_{6} = 233_{6}$.</p>
 
 <p>Subtraction works similarly, setting it up the same way. Given $41_{6} - 24_{6}$, we can calculate by setting it up the standard way. Since 1 is less than 4, we have to carry a $1$ from the 4, and get $(11-4)_{6}$, which is $3$. Then, $3-2 = 1$. Therefore, $41 - 24 = 13$ in base $6$.</p>
 <h3>Multiplication</h3>
 <p>Base multiplications works just as it would in base 10, except you simply carry the 1 each time you exceed the base.</p>
-<p>Example: $24_{5} \cdot 3_{5}$: Multiply $4 \cdot 3 = 13$ in base 5, $12 = 22_{5}$, so write $2$ and cary $2$. Continuing on, treat this as an exercise to yield $132_{5}$</p>
+<p>Example: $24_{5} \cdot 3_{5}$: Multiply $4 \cdot 3 = 12$ in base 10, $12 = 22_{5}$, so write $2$ and carry $2$. Continuing on, treat this as an exercise to yield $132_{5}$</p>
 <h3>Division/Divisibility</h3>
 <p>Division and divisibility also the same way as in base 10, with repeated subtraction or long division. It is often times more fruitful to explain and demonstrate this with examples rather than with words, so let’s try it with:</p>
 <p>$234_{6} \div 3_{6}$, in base 10</p>
@@ -324,7 +324,7 @@
 
 <ol>
 <li>Convert $0.25_{10}$ to base 2.</li>
-<li>Convert $0.36_{9}$ to base 5.</li>
+<li>Convert $0.36_{10}$ to base 5.</li>
 </ol>
 </div>
 <div class="solution-section">
@@ -332,7 +332,7 @@
 
 <ol>
 <li>To convert $0.25_{10}$ to base $2$, we can multiply the fractional part by $2$ repeatedly. We have $0.25 \cdot 2 = 0.5$, so the first digit is $0$. Next, we take $0.5 \cdot 2 = 1.0$, so the second digit is $1$. Therefore, $\boxed{0.25_{10} = 0.01_{2}}$.</li>
-<li>To convert $0.36_{9}$ to base $5$, we can multiply the fractional part by $5$ repeatedly. We have $0.36 \cdot 5 = 1.8$, so the first digit is $1$. Next, we take $0.8 \cdot 5 = 4.0$, so the second digit is $4$. Therefore, $\boxed{0.36_{9} = 0.14_{5}}$.</li>
+<li>To convert $0.36_{10}$ to base $5$, we can multiply the fractional part by $5$ repeatedly. We have $0.36 \cdot 5 = 1.8$, so the first digit is $1$. Next, we take $0.8 \cdot 5 = 4.0$, so the second digit is $4$. Therefore, $\boxed{0.36_{10} = 0.14_{5}}$.</li>
 </ol>
 </div>
 
@@ -353,7 +353,7 @@
 <p>Firstly, addition adheres to several rules when it comes to modular arithmetic.</p>
 <p>If a + b = c, then $a \equiv n + b\equiv n = c \equiv n$.</p>
 <p>If $a = b$, then $a + k$ mod $n \equiv b + k$ mod $n$.</p>
-<p>If $a \equiv b$ (mod $N$), then $-a \equiv b$ (mod $N$).</p>
+<p>If $a \equiv b$ (mod $N$), then $-a \equiv -b$ (mod $N$).</p>
 
 <div class="exercise-section">
 <h4>Exercises</h4>
@@ -482,7 +482,7 @@
 
 <p>Working $29^{25} \pmod{11}$ simplifies to $(-4)^{25} \pmod{11}$, and since $(-4)^{10} \equiv 1 \pmod{11}$, we have $(-4)^5 \equiv -1024 \equiv -1 \pmod{11}$.</p>
 <h2>Totient Function + Extension to Fermat’s</h2>
-<p>Euler’s totient function is defined as the number of coprime numbers to a number n. This function is usually denoted as phi or $\Phi (n)$. For low values of n, we can directly compute. For example, $\Phi (9) = 6$ since 3, 6, and 9 are coprime to 9. We note particularly that for n is a prime, the phi function returns n-1; since the only non coprime number to n is itself. For higher values of n, we resort to Euler’s product formula. In particular, the value is n times (1-1/p), where p is every prime factor of n. We can use this to extend Fermat’s little theorem such that $a^{\Phi(n)-1}=1 \mod{n}$ even when n is not prime.</p>
+<p>Euler’s totient function is defined as the number of coprime numbers to a number n. This function is usually denoted as phi or $\Phi (n)$. For low values of n, we can directly compute. For example, $\Phi (9) = 6$ since 1, 2, 4, 5, 7, and 8 are coprime to 9. We note particularly that for n is a prime, the phi function returns n-1; since the only non coprime number to n is itself. For higher values of n, we resort to Euler’s product formula. In particular, the value is n times (1-1/p), where p is every prime factor of n. We can use this to extend Fermat’s little theorem such that if $\gcd(a,n)=1$, then $a^{\Phi(n)} \equiv 1 \pmod{n}$ even when n is not prime.</p>
 <p>If $1 \le n \le 1000$, what value of n minimizes $\Phi {n}/n$?</p>
 <p>Use the formula of the phi function. Then this simplifies to (1-1/p) for all prime factors of n. To minimize this, we note that each term is minimized when p is as small as possible. Thus, when p is 2, it is the minimum for one prime factor. But if there are more factors, we want to extend it as far as possible. This means $n$ is $k!$, and $n \le 1000$ means n is 720 or 6!.</p>
 <h2>Wilson’s Theorem</h2>
@@ -506,7 +506,16 @@
 </div>
 
 <h2>Diophantine Equations</h2>
-<p>Diophantine equations are generally equations of form ax+by=c. We seek integer solutions for x, y. Firstly, we must confirm that c is divisible by the gcd(a,b)=d (why?). Once one solution is found, all solutions are of form $(x_0+ k\frac{b}{d}, y_0-k\frac{a}{d}. The easiest way to find solutions in complicated equations is the Euclidian algorithm, but inspection can often work as well. For example, take 2x+3y=5. By inspection, x=y=1 is easy to find. Since 2 and 3 are coprime, d = 1. Then, the solutions are formed (1+3k,1-2k). Trying some other solutions (4,-1) should convince us of the truth.</p>
+<p>Diophantine equations are generally equations of form ax+by=c. 
+   We seek integer solutions for x, y. 
+   Firstly, we must confirm that c is divisible by the gcd(a,b)=d (why?). 
+   Once one solution is found, all solutions are of form $(x_0+ k\frac{b}{d}, y_0-k\frac{a}{d})$. 
+   The easiest way to find solutions in complicated equations is the Euclidean algorithm, but inspection can often work as well. 
+   For example, take 2x+3y=5. By inspection, x=y=1 is easy to find. Since 2 and 3 are coprime, d = 1. 
+   Then, the solutions are formed (1+3k,1-2k). 
+   Trying some other solutions (4,-1) should convince us of the truth.</p>
+
+
 <p>Verify the general solution by plugging it into the diophantine equation.</p>
 <p>Verify why c is divisible by gcd(a,b).</p>
 <p>Solve the equation $15x+21y=63$ for integer solutions x and y.</p>
