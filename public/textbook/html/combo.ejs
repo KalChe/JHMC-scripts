@@ -19,17 +19,88 @@
 
 <p>When solving a counting problem, solutions may either be direct or indirect. Direct counting, as the name suggests, involves directly counting the number of cases that satisfy your conditions. Direct counting, like complementary counting, may often employ several different techniques and theorems such as casework, permutations, etc. As a very simple example, let's say Drew the dog gets a treat every weekday. If we want to calculate how many treats he has received after $8$ weeks, we can just multiply $8 \cdot 5$ to get our answer of $\boxed{40}$ dog treats.</p>
 
+<div class="exercise-section">
+<h4>Exercises</h4>
+<ol>
+<li>A local deli offers 4 types of bread, 3 types of meat, and 5 types of cheese. How many different sandwiches can be made containing exactly one bread, one meat, and one cheese?</li>
+<li>How many 4-digit PIN codes can be created using the digits 0-9 if the first digit cannot be 0?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Because every choice is independent, we can directly multiply the number of options for each part of the sandwich. There are 4 choices for bread, 3 for meat, and 5 for cheese, so there are $4 \cdot 3 \cdot 5 = \boxed{60}$ different sandwiches.</li>
+<li>The first digit has 9 options (1 through 9). The second, third, and fourth digits each have 10 options (0 through 9) since repetition is allowed. Multiplying these independent choices directly gives $9 \cdot 10 \cdot 10 \cdot 10 = \boxed{9000}$ possible PIN codes.</li>
+</ol>
+</div>
+
+
 <h4 id="complementary-counting">Complementary Counting</h4>
 
 <p>Complementary counting involves counting the number of cases that fail, and subtracting that number from the total number of cases. Oftentimes, direct counting may be complicated, with many different annoying cases to bash. Thus, complementary counting represents a possible simpler alternative. If Roy the Rooster has $5$ unique worms in front of him, how many ways can he eat $2$ or more of the worms? Here, instead of counting the cases in which he eats $2$, $3$, $4$, and $5$ worms, we can count the ways in which he eats $1$ or $0$ worms. There are $5$ ways to eat $1$ of the worms, since he can pick any of the $5$ worms to eat. There is $1$ way to eat $0$ worms trivially. Thus, there are $6$ ways where Roy fails to meet his conditions. There are $32$ total cases here, since for each worm, there are $2$ possibilities for them: eaten or uneaten. $2^5$ is 32. Because there are $6$ ways in which Roy fails, there are $32-6 = \boxed{26}$ ways in which he succeeds in his conditions.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+<ol>
+<li>A fair coin is flipped 5 times. How many possible outcome sequences contain at least one Head?</li>
+<li>How many 3-digit positive integers contain the digit 7 at least once?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Directly counting sequences with 1, 2, 3, 4, or 5 Heads requires casework. Instead, we use complementary counting. There are $2^5 = 32$ total possible sequences. The only case that fails the condition is getting zero Heads (which means rolling TTTTT). There is $1$ way for this to happen. Subtracting the failures from the total gives $32 - 1 = \boxed{31}$ sequences.</li>
+<li>There are $900$ total 3-digit integers (from 100 to 999). It is difficult to count all numbers that have a 7 in the first, second, or third place directly due to overlap. Instead, we count the numbers that have <em>no</em> 7s. For the first digit, there are 8 options (1-9, excluding 7). For the second and third digits, there are 9 options each (0-9, excluding 7). There are $8 \cdot 9 \cdot 9 = 648$ numbers with no 7. Subtracting this from the total gives $900 - 648 = \boxed{252}$ integers.</li>
+</ol>
+</div>
+
 
 <h4 id="casework">Casework</h4>
 
 <p>As the name suggests, casework is employed when you have multiple cases to consider. Sometimes, you can't solve your problem with just one calculation, and you have to consider multiple different "sets" of successful cases that all satisfy your condition. Going back to Roy and his worms, let's use casework instead of complementary counting. Here, we must split our count up into $4$ different cases– a case for each number of worms Roy decides to eat. There are $10$ ways for Roy to eat $2$ worms, $10$ ways for Roy to eat $3$ worms, $5$ ways for Roy to eat $4$ worms, and $1$ way for Roy to eat all $5$ worms. If you don't understand how we got these numbers, I suggest looking at our combinations sections under "Counting Techniques". If we add all of these up, you'll see that we reach an answer of $\boxed{26}$, which is the same answer we got when we used complementary counting.</p>
 
+<div class="exercise-section">
+<h4>Exercises</h4>
+<ol>
+<li>How many different ways can you make exactly 10 cents using any combination of pennies (1¢), nickels (5¢), and dimes (10¢)?</li>
+<li>How many two-digit positive integers have digits that sum to a perfect square?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>We can split this into cases based on the number of dimes used.<br>
+<strong>Case 1: 1 dime.</strong> The remaining 0 cents must be made of 0 nickels and 0 pennies (1 way).<br>
+<strong>Case 2: 0 dimes.</strong> Now we must make 10 cents with nickels and pennies. We split this into sub-cases based on nickels: we can use 2 nickels (1 way), 1 nickel and 5 pennies (1 way), or 0 nickels and 10 pennies (1 way).<br>
+Adding all cases together: $1 + 1 + 1 + 1 = \boxed{4}$ ways.</li>
+<li>The maximum possible sum of digits for a two-digit number is $9+9=18$. The perfect squares up to 18 are 1, 4, 9, and 16. We set up four cases:<br>
+<strong>Case 1 (Sum = 1):</strong> Only 10 (1 number).<br>
+<strong>Case 2 (Sum = 4):</strong> 13, 22, 31, 40 (4 numbers).<br>
+<strong>Case 3 (Sum = 9):</strong> 18, 27, 36, 45, 54, 63, 72, 81, 90 (9 numbers).<br>
+<strong>Case 4 (Sum = 16):</strong> 79, 88, 97 (3 numbers).<br>
+Adding all the cases yields $1 + 4 + 9 + 3 = \boxed{17}$ integers.</li>
+</ol>
+</div>
+
+
 <h4 id="overcounting">Overcounting</h4>
 
 <p>Oftentimes, overcounting your successful cases with a simple calculation and subsequently subtracting the number of "overlapping" or "overcounted" cases may be a quick method to supplement casework. A concept that encapsulates this idea is the principle of inclusion-exclusion, also known as PIE. Here's a question, how many numbers less than or equal to $200$ are divisible by either $4$ or $5$? We know there are $\frac{200}{4} = 50$ numbers divisible by $4$ and $\frac{200}{5} = 40$ numbers divisible by $5$, so the number we get is $90$. However, we are overcounting numbers divisible by both $4$ and $5$ at the same time. For example, we counted $20$ as one of our numbers when we were considering divisibility by $4$, but we also counted it once more when considering divisibility by $5$. Thus, we have overcounted. To fix this, just subtract the number of numbers divisible by both $4$ and $5$. This is $10$ numbers. Thus, our actual answer is $90 - 10 = \boxed{80}$ numbers.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+<ol>
+<li>Out of 50 people at a party, 32 like pizza, 24 like hot dogs, and 8 like neither. How many people like both pizza and hot dogs?</li>
+<li>How many integers from 1 to 100 inclusive are multiples of 2 or 3?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>First, find the total number of people who like at least one of the foods: $50 - 8 = 42$ people. If we add the number of people who like pizza to the number who like hot dogs, we get $32 + 24 = 56$. Because this number is larger than 42, the difference must be the people we overcounted (those who were counted in both groups). Therefore, $56 - 42 = \boxed{14}$ people like both.</li>
+<li>First, we count the multiples of 2: there are $100 / 2 = 50$. Next, we count the multiples of 3: there are $\lfloor 100 / 3 \rfloor = 33$. If we add these, we get $83$. However, we have overcounted the numbers that are multiples of both 2 and 3 (multiples of 6). There are $\lfloor 100 / 6 \rfloor = 16$ multiples of 6. Using the principle of inclusion-exclusion, the actual count is $50 + 33 - 16 = \boxed{67}$.</li>
+</ol>
+</div>
 
 <h2 id="counting-techniques">Counting Techniques</h2>
 
