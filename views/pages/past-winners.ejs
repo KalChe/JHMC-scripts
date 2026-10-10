@@ -7,9 +7,7 @@
     <title>Past Winners | JHMC</title>
     <meta name="description" content="See the past winners of the Junior High Math Contest." />
 
-    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Custom fonts for this template -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap"
       rel="stylesheet"
@@ -18,7 +16,6 @@
       href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
       rel="stylesheet"
     />
-    <!-- Custom styles for this template -->
     <link href="css/one-page-wonder.css" rel="stylesheet" />
     <style>
         .container-past-winners {
@@ -200,38 +197,42 @@
             }
         },
         2026: {
-                    "In-Person": {
-                        A: {
-                            "7th Grade Individual": [{name: "Aryan Dhawan"}],
-                            "7th Grade Team": [{name: "Aryan Dhawan, Prajwal Jadhav, Alex Huerta Gago"}],
-                            "8th Grade Individual": [{name: "Daniel Hua, Grant Vongluekiat, and Colin Blentlinger (Tie)"}],
-                            "8th Grade Team": [{name: "Colin Blentlinger, Grant Vongluekiat, Ben Nguyen, Nathan Tydys"}],
-                            "Creative Thinking": [{name: Aryan Dhawan, Prajawal Jadhav & Elizabeth Tweetie, Nathan Tydys (Tie)"}]
-                        },
-                        AA: {
-                            "7th Grade Individual": [{name: "Annabelle Wang, Michael Johnson, Wesley Bombach, Kayla Schubmehl"}],
-                            "7th Grade Team": [{name: "Krish Uppal, Wesley Bombach, Harshith Valluri, Lucas Suciu & Albert Zhang, Allie Schubmehl, Kayla Schubmehl"}],
-                            "8th Grade Individual": [{name: "Ethan Duhovny"}],
-                            "8th Grade Team": [{name: "Nathan Schwartz, Jack Van Beek, Ronin Patel, Lincoln Sickinger"}],
-                            "Creative Thinking": [{name: "Albert Zhang, Jack Van Beek"}]
-                        }
-                    },
-                    "Virtual": {
-                        "Combined A & AA": {
-                            "7th Grade Individual": [{name: "Noah Marquez"}],
-                            "7th Grade Team": [{name: "Ava Jiang, Selena Shashtri, Keerthan Prem, Vibhuti Vikram"}],
-                            "8th Grade Individual": [{name: "Riyan Mohanty"}],
-                            "8th Grade Team": [{name: "Trevor Szeto, Rishi Iyer, Thomas Vondra, Abbas Safvi"}],
-                            "Creative Thinking": [{name: "Ryan Kim, Danell Ben-Moshe"}]
-                        }
-                    }
+            "In-Person": {
+                A: {
+                    "7th Grade Individual": [{name: "Aryan Dhawan"}],
+                    "7th Grade Team": [{name: "Aryan Dhawan, Prajwal Jadhav, Alex Huerta Gago"}],
+                    "8th Grade Individual": [{name: "Daniel Hua, Grant Vongluekiat, and Colin Blentlinger (Tie)"}],
+                    "8th Grade Team": [{name: "Colin Blentlinger, Grant Vongluekiat, Ben Nguyen, Nathan Tydys"}],
+                    "Creative Thinking": [{name: "Aryan Dhawan, Prajawal Jadhav & Elizabeth Tweetie, Nathan Tydys (Tie)"}]
+                },
+                AA: {
+                    "7th Grade Individual": [{name: "Annabelle Wang, Michael Johnson, Wesley Bombach, Kayla Schubmehl"}],
+                    "7th Grade Team": [{name: "Krish Uppal, Wesley Bombach, Harshith Valluri, Lucas Suciu & Albert Zhang, Allie Schubmehl, Kayla Schubmehl"}],
+                    "8th Grade Individual": [{name: "Ethan Duhovny"}],
+                    "8th Grade Team": [{name: "Nathan Schwartz, Jack Van Beek, Ronin Patel, Lincoln Sickinger"}],
+                    "Creative Thinking": [{name: "Albert Zhang, Jack Van Beek"}]
                 }
+            },
+            "Virtual": {
+                "Combined A & AA": {
+                    "7th Grade Individual": [{name: "Noah Marquez"}],
+                    "7th Grade Team": [{name: "Ava Jiang, Selena Shashtri, Keerthan Prem, Vibhuti Vikram"}],
+                    "8th Grade Individual": [{name: "Riyan Mohanty"}],
+                    "8th Grade Team": [{name: "Trevor Szeto, Rishi Iyer, Thomas Vondra, Abbas Safvi"}],
+                    "Creative Thinking": [{name: "Ryan Kim, Danell Ben-Moshe"}]
+                }
+            }
+        }
     };
 
-
     function renderWinners(year, mode) {
-        // If Virtual, show Combined A & AA in a single column
         const columnsDiv = document.querySelector('.columns');
+        
+        if (!winnersData[year] || !winnersData[year][mode]) {
+            columnsDiv.innerHTML = '<div class="division"><h2>No Data</h2><div>No data available for the selected options.</div></div>';
+            return;
+        }
+
         if (mode === "Virtual") {
             columnsDiv.innerHTML = '';
             const combinedData = winnersData[year][mode]["Combined A & AA"];
@@ -244,9 +245,9 @@
                 html += `<div class="category"><h3>${category}</h3><ul class="winner-list">`;
                 combinedData[category].forEach(entry => {
                     if (entry.name) {
-                        html += `<li>${entry.name ? entry.name : '<span style=\"color:#bbb;\">No winner entered</span>'}${entry.score ? ` <span style=\"color:#888;\">(${entry.score})</span>` : ''}</li>`;
+                        html += `<li>${entry.name}${entry.score ? ` <span style="color:#888;">(${entry.score})</span>` : ''}</li>`;
                     } else {
-                        html += `<li style=\"color:#bbb;\">No winner entered</li>`;
+                        html += `<li style="color:#bbb;">No winner entered</li>`;
                     }
                 });
                 html += `</ul></div>`;
@@ -254,7 +255,6 @@
             html += `</div>`;
             columnsDiv.innerHTML = html;
         } else {
-            // Restore the original columns HTML
             columnsDiv.innerHTML = `
                 <div class="division">
                     <h2>Division A</h2>
@@ -303,34 +303,37 @@
                     </div>
                 </div>
             `;
-            // Now fill in the lists as before
+            
             const divisions = ['A', 'AA'];
             divisions.forEach(div => {
                 const divisionData = winnersData[year][mode][div];
+                if (!divisionData) return;
                 for (const category in divisionData) {
-                    const list = document.getElementById(`winners-${div}-${category.replace(/\s+/g, '-')}`);
-                    list.innerHTML = '';
-                    divisionData[category].forEach(entry => {
-                        if (entry.name) {
-                            list.innerHTML += `<li>${entry.name ? entry.name : '<span style=\"color:#bbb;\">No winner entered</span>'}${entry.score ? ` <span style=\"color:#888;\">(${entry.score})</span>` : ''}</li>`;
-                        } else {
-                            list.innerHTML += `<li style=\"color:#bbb;\">No winner entered</li>`;
-                        }
-                    });
+                    const listId = `winners-${div}-${category.replace(/\s+/g, '-')}`;
+                    const list = document.getElementById(listId);
+                    if (list) {
+                        list.innerHTML = '';
+                        divisionData[category].forEach(entry => {
+                            if (entry.name) {
+                                list.innerHTML += `<li>${entry.name}${entry.score ? ` <span style="color:#888;">(${entry.score})</span>` : ''}</li>`;
+                            } else {
+                                list.innerHTML += `<li style="color:#bbb;">No winner entered</li>`;
+                            }
+                        });
+                    }
                 }
             });
         }
     }
 
-
     document.addEventListener('DOMContentLoaded', function() {
         const yearSelect = document.getElementById('year-select');
         const modeSelect = document.getElementById('mode-select');
-        // Set default to most recent year and In-Person
+        
         yearSelect.value = "2026";
         modeSelect.value = "In-Person";
+        
         renderWinners(yearSelect.value, modeSelect.value);
-
 
         yearSelect.addEventListener('change', function() {
             renderWinners(this.value, modeSelect.value);
@@ -340,7 +343,6 @@
         });
     });
 </script>
-
 </head>
 <body>
     <%- include('../partials/navbar') %>
@@ -366,6 +368,7 @@
                     <option value="2023">2023</option>
                     <option value="2024">2024</option>
                     <option value="2025">2025</option>
+                    <option value="2026">2026</option>
                 </select>
                 <label for="mode-select" style="margin-left:16px;"><strong>Mode:</strong></label>
                 <select id="mode-select" class="form-select d-inline-block" style="width:auto;">
@@ -375,54 +378,6 @@
             </div>
         </div>
         <div class="columns">
-            <!-- Division A -->
-            <div class="division">
-                <h2>Division A</h2>
-                <div class="category">
-                    <h3>7th Grade Individual</h3>
-                    <ul class="winner-list" id="winners-A-7th-Grade-Individual"></ul>
-                </div>
-                <div class="category">
-                    <h3>7th Grade Team</h3>
-                    <ul class="winner-list" id="winners-A-7th-Grade-Team"></ul>
-                </div>
-                <div class="category">
-                    <h3>8th Grade Individual</h3>
-                    <ul class="winner-list" id="winners-A-8th-Grade-Individual"></ul>
-                </div>
-                <div class="category">
-                    <h3>8th Grade Team</h3>
-                    <ul class="winner-list" id="winners-A-8th-Grade-Team"></ul>
-                </div>
-                <div class="category">
-                    <h3>Creative Thinking</h3>
-                    <ul class="winner-list" id="winners-A-Creative-Thinking"></ul>
-                </div>
-            </div>
-            <!-- Division AA -->
-            <div class="division">
-                <h2>Division AA</h2>
-                <div class="category">
-                    <h3>7th Grade Individual</h3>
-                    <ul class="winner-list" id="winners-AA-7th-Grade-Individual"></ul>
-                </div>
-                <div class="category">
-                    <h3>7th Grade Team</h3>
-                    <ul class="winner-list" id="winners-AA-7th-Grade-Team"></ul>
-                </div>
-                <div class="category">
-                    <h3>8th Grade Individual</h3>
-                    <ul class="winner-list" id="winners-AA-8th-Grade-Individual"></ul>
-                </div>
-                <div class="category">
-                    <h3>8th Grade Team</h3>
-                    <ul class="winner-list" id="winners-AA-8th-Grade-Team"></ul>
-                </div>
-                <div class="category">
-                    <h3>Creative Thinking</h3>
-                    <ul class="winner-list" id="winners-AA-Creative-Thinking"></ul>
-                </div>
-            </div>
         </div>
       </div>
     </section>
@@ -431,3 +386,4 @@
 
     <%- include('../partials/footer') %>
 </body>
+</html>
