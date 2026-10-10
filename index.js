@@ -86,6 +86,10 @@ app.get("/past-tests", (req, res) => {
   res.render("pages/past-tests.ejs");
 });
 
+app.get("/math-journal", (req, res) => {
+  res.render("pages/math-journal.ejs");
+});
+
 app.get("/about", (req, res) => {
   res.render("pages/about.ejs");
 });
