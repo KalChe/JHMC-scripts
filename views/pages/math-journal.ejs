@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  >
+
+  <%- include('../partials/meta'); %>
+
+  <title>MAO Math Journal | JHMC</title>
+  <meta
+    name="description"
+    content="Explore IMSA's mathematical community through the monthly MAO Math Journal."
+  >
+
+  <!-- Bootstrap -->
+  <link
+    href="/vendor/bootstrap/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Website fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+    rel="stylesheet"
+  >
+
+  <!-- Website styles -->
+  <link href="/css/one-page-wonder.css" rel="stylesheet">
+
+  <style>
+    /* Same panel rules as Past Winners. */
+    .journal-archive {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Same header rules as Past Winners. */
+    .journal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    /* Same select rules as Past Winners. */
+    select {
+      font-size: 1em;
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid #bbb;
+    }
+
+    /* Journal cards use the Past Winners panel colors. */
+    .journal-card {
+      margin-top: 0;
+      padding: 20px;
+      background: #f3f6fa;
+      border: 0;
+      border-radius: 6px;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 0;
+    }
+
+    .journal-cover-link {
+      display: block;
+    }
+
+    /* Show the complete rectangular cover. */
+    .journal-card .journal-cover {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    .journal-card .card-body {
+      padding: 20px 0 0;
+      gap: 12px;
+    }
+
+    .journal-card .card-title {
+      color: #2a4d7a;
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+
+    .journal-card .card-text {
+      margin-bottom: 0;
+    }
+
+    .journal-card .btn {
+      margin-top: auto;
+    }
+
+    /* Keep the header readable on small screens. */
+    @media (max-width: 575px) {
+      .journal-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <%- include('../partials/navbar') %>
+
+  <!-- Page header -->
+  <header class="masthead2 text-center imsa-foreground">
+    <div class="masthead-content">
+      <div class="container">
+        <h1 class="masthead-heading mb-0">MAO Math Journal</h1>
+        <br>
+        <h2>Explore the Math Community Behind JHMC</h2>
+      </div>
+    </div>
+  </header>
+
+  <!-- Introduction -->
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg">
+          <div class="p-4 p-md-5">
+            <h2 class="display-4">About the Journal</h2>
+
+            <p>
+              JHMC is organized by
+              <strong>IMSA’s Mu Alpha Theta chapter</strong>.
+              The MAO Math Journal offers a look at the ideas and people
+              in the mathematical community behind the contest.
+            </p>
+
+            <blockquote class="mt-4">
+              <em>
+                The MAO Math Journal is published monthly to celebrate
+                the ideas, creativity, and people that make up IMSA’s
+                mathematical community. Come see what IMSA students,
+                alumni, and faculty are exploring, creating, and
+                discovering through fascinating mathematical topics,
+                original problems, elegant proofs, poetry, artwork,
+                puzzles, and more.
+              </em>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Archive -->
+  <section>
+    <div class="journal-archive">
+      <div class="journal-header">
+        <h2
+          style="font-weight:800; color:#2a4d7a; margin-bottom:0;"
+        >
+          Journals by Year
+        </h2>
+
+        <div>
+          <label for="journal-year-select">
+            <strong>Year:</strong>
+          </label>
+          <select
+            id="journal-year-select"
+            class="form-select d-inline-block"
+            style="width:auto;"
+          ></select>
+        </div>
+      </div>
+
+      <div
+        id="journal-grid"
+        class="row"
+        aria-live="polite"
+      ></div>
+    </div>
+  </section>
+
+  <script>
+    // Add new issues under their publication year.
+    const journalData = {
+      2026: [
+        {
+          month: 10,
+          name: "October",
+          volume: 1,
+          pdf: "/docs/math-journals/2026/october.pdf",
+          cover: "/img/math-journals/october-2026-cover.png"
+        }
+      ]
+    };
+
+    const yearSelect = document.getElementById("journal-year-select");
+    const journalGrid = document.getElementById("journal-grid");
+
+    // Show the newest year first.
+    const years = Object.keys(journalData).sort(
+      (a, b) => Number(b) - Number(a)
+    );
+
+    years.forEach((year) => {
+      const option = document.createElement("option");
+      option.value = year;
+      option.textContent = year;
+      yearSelect.appendChild(option);
+    });
+
+    function renderJournals() {
+      const year = yearSelect.value;
+
+      // Show every issue for this year, newest month first.
+      const issues = [...journalData[year]].sort(
+        (a, b) => b.month - a.month
+      );
+
+      journalGrid.innerHTML = issues.map((issue) => `
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="card journal-card h-100">
+            <a
+              href="${issue.pdf}"
+              class="journal-cover-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open the ${issue.name} ${year} journal in a new tab"
+            >
+              <img
+                src="${issue.cover}"
+                class="journal-cover"
+                alt="${issue.name} ${year} journal cover"
+                loading="lazy"
+              >
+            </a>
+
+            <div class="card-body">
+              <h5 class="card-title">
+                ${issue.name} ${year}
+              </h5>
+
+              <p class="card-text">
+                <i>Volume ${issue.volume}</i>
+              </p>
+
+              <a
+                href="${issue.pdf}"
+                class="btn btn-outline-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Journal
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    yearSelect.value = years[0];
+    yearSelect.addEventListener("change", renderJournals);
+    renderJournals();
+  </script>
+
+  <div id="bottom-spacer"></div>
+
+  <!-- Footer -->
+  <%- include('../partials/footer') %>
+</body>
+
+</html>
